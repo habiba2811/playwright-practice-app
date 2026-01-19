@@ -10,6 +10,7 @@ export default defineConfig({
   use: {
     baseURL: 'https://sakai.primeng.org/uikit/formlayout',
     trace: 'on-first-retry',
+  //  video: 'on',
     launchOptions: {
     slowMo: 1000,
   }, 
