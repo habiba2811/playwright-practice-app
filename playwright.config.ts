@@ -10,7 +10,7 @@ export default defineConfig({
   use: {
     baseURL: 'https://sakai.primeng.org',
     trace: 'on-first-retry',
-  //  video: 'on',
+    video: 'on',
     launchOptions: {
     slowMo: 1000,
   }, 
