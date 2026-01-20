@@ -7,8 +7,10 @@ reliable assertions, and readable test structure.
 ## What is covered
 - Form Layout page interactions: Vertical, Horizontal, Vertical Grid, Help Text,
   and Advanced form cards.
+- Input Fields page interactions: input text states, icons, float label, textarea,
+  autocomplete, date picker, and input number.
 - Field behaviors: fill, clear, sequential typing, value assertions, combobox
-  selection.
+  selection, and numeric step controls.
 
 ## Project setup
 ```bash
@@ -35,4 +37,5 @@ npx playwright test
 
 ## Key files
 - `tests/uiComponents.spec.ts` UI form layout tests
+- `tests/uiComponents/inputFields.spec.ts` UI input fields tests
 - `playwright.config.ts` Playwright configuration
