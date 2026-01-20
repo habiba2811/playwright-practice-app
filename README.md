@@ -19,8 +19,11 @@ npm install
 
 ## Running tests
 ```bash
-# Run the focused UI spec in headed mode
-npm run test:ui
+# Run the Form Layout spec in headed mode
+npm run test:forms
+
+# Run the Input Fields spec in headed mode
+npm run test:input
 
 # Or run the full suite
 npx playwright test
@@ -36,6 +39,6 @@ npx playwright test
 - Browser project: Chromium (other browsers are present but commented out)
 
 ## Key files
-- `tests/uiComponents.spec.ts` UI form layout tests
+- `tests/uiComponents/formLayout.spec.ts` UI form layout tests
 - `tests/uiComponents/inputFields.spec.ts` UI input fields tests
 - `playwright.config.ts` Playwright configuration
