@@ -8,7 +8,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    baseURL: 'https://sakai.primeng.org/uikit/formlayout',
+    baseURL: 'https://sakai.primeng.org',
     trace: 'on-first-retry',
   //  video: 'on',
     launchOptions: {
