@@ -33,7 +33,7 @@ npx playwright test
 ![UI Components Demo](demo.gif)
 
 ## Configuration notes
-- Base URL: `https://sakai.primeng.org/uikit/formlayout`
+- Base URL: `https://sakai.primeng.org
 - Reporter: HTML (`playwright-report/`)
 - Slow motion: `1000ms` to make interactions easier to follow
 - Browser project: Chromium (other browsers are present but commented out)
