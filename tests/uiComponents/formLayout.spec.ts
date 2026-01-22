@@ -1,7 +1,11 @@
 import { test, expect } from '@playwright/test';
+import { darkMode } from '../../handlers/darkModeHanlder';
+
 
 test.beforeEach( async ({page}) => {
     await page.goto('/')
+    await darkMode({page})
+
 })
 
 test.describe('Ui Components - Form Layout', ()=> {

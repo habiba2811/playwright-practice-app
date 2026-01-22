@@ -8,9 +8,11 @@ reliable assertions, and readable test structure.
 - Form Layout page interactions: Vertical, Horizontal, Vertical Grid, Help Text,
   and Advanced form cards.
 - Input Fields page interactions: input text states, icons, float label, textarea,
-  autocomplete, date picker, and input number.
+  autocomplete, date picker, input number, slider, rating, knob, color picker,
+  and input group.
 - Field behaviors: fill, clear, sequential typing, value assertions, combobox
   selection, and numeric step controls.
+- UI theme support: dark mode toggle helper.
 
 ## Project setup
 ```bash
@@ -33,12 +35,13 @@ npx playwright test
 ![UI Components Demo](demo.gif)
 
 ## Configuration notes
-- Base URL: `https://sakai.primeng.org
+- Base URL: `https://sakai.primeng.org`
 - Reporter: HTML (`playwright-report/`)
-- Slow motion: `1000ms` to make interactions easier to follow
+- Slow motion: `200ms` to make interactions easier to follow
 - Browser project: Chromium (other browsers are present but commented out)
 
 ## Key files
 - `tests/uiComponents/formLayout.spec.ts` UI form layout tests
 - `tests/uiComponents/inputFields.spec.ts` UI input fields tests
+- `handlers/darkModeHanlder.js` Dark mode toggle helper
 - `playwright.config.ts` Playwright configuration

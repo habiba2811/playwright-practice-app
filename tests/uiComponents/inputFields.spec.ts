@@ -1,7 +1,9 @@
 import { test, expect } from '@playwright/test';
+import { darkMode } from '../../handlers/darkModeHanlder';
 
 test.beforeEach( async ({page}) => {
     await page.goto('/')
+    await darkMode({page})
 })
 
 test.describe('Ui Components - Input Fields', ()=> {
@@ -11,7 +13,7 @@ test.describe('Ui Components - Input Fields', ()=> {
          
    test('Input Fields', async ({page})=> {
 
-        // // InputText 
+        // InputText 
         const defaultInput= page.getByRole('textbox', { name: 'Default' });
         await defaultInput.fill('John');
         await expect(defaultInput).toHaveValue('John');
@@ -42,7 +44,7 @@ test.describe('Ui Components - Input Fields', ()=> {
         await textArea.fill('blahblahblahblahblahblahblahblahblahblahhblahblahblahblahblahhblahblahblah')
         await expect(textArea).toHaveValue('blahblahblahblahblahblahblahblahblahblahhblahblahblahblahblahhblahblahblah');
 
-        //AutoComplete
+        // AutoComplete
         const autoComplete= page.getByRole('combobox', { name: 'Search'})
         await autoComplete.click();
         await autoComplete.fill('Ge');
@@ -87,9 +89,9 @@ test.describe('Ui Components - Input Fields', ()=> {
         // Knob
         const knob= page.locator('svg[role="slider"]')
         await knob.focus()
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < 10; i++) {
         await knob.press('ArrowLeft')}
-        await expect(page.locator('.p-knob-text')).toHaveText('30%')
+        await expect(page.locator('.p-knob-text')).toHaveText('40%')
 
         // ColorPicker
         const colorTrigger = page.locator('.p-colorpicker-preview[data-pc-section="input"]');
@@ -101,7 +103,26 @@ test.describe('Ui Components - Input Fields', ()=> {
         if (!box) throw new Error('Color box not visible');
         await page.mouse.click(box.x + 20, box.y + 20);
 
-
+        // InputGroup
+        const groupSection = page.locator('.card', {hasText:'InputGroup'})
+        const groupUserName= groupSection.getByRole('textbox', {name: 'Username'})
+        const price= groupSection.getByRole('spinbutton', {name: 'Price'})
+        const searchKeyword= groupSection.getByRole('textbox', {name: 'Keyword'})
+        const confirm= groupSection.getByRole('textbox', {name: 'Confirm'})
+        const checkBox= groupSection.getByRole('checkbox')
+        const searchButton= groupSection.getByRole('button', {name: 'Search'})
+        await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+        await groupUserName.fill('John Doe')
+        await expect(groupUserName).toHaveValue('John Doe')
+        await price.fill('50000')
+        await expect(price).toHaveValue('50000')
+        await searchKeyword.fill('text')
+        await expect(searchKeyword).toHaveValue('text')
+        await confirm.fill('Confirm')
+        await expect(confirm).toHaveValue('Confirm')
+        await checkBox.check()
+        await expect(checkBox).toBeChecked()
+        await searchButton.click()
 
 
    })
