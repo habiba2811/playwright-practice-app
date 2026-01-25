@@ -124,6 +124,37 @@ test.describe('Ui Components - Input Fields', ()=> {
         await expect(checkBox).toBeChecked()
         await searchButton.click()
 
+        // RadioButton
+        const radioCard = page.locator('.card', { hasText: 'RadioButton' })
+        const newYorkRadio = radioCard.locator('text=New York').locator('..').getByRole('radio')
+        await newYorkRadio.check()
+        await expect(newYorkRadio).toBeChecked()
+
+        // CheckBox
+        const checkBoxCard= page.locator('.card', { hasText: 'Checkbox'})
+        const losAnglesCheck= checkBoxCard.locator('text= Los Angeles').locator('..').getByRole('checkbox')
+        await losAnglesCheck.check()
+        await expect(losAnglesCheck).toBeChecked()
+
+        // ToggleSwitch
+        const toggle= page.locator('.card', { hasText: 'ToggleSwitch'}).getByRole('switch')
+        toggle.check()
+        await expect(toggle).toBeChecked()
+
+        // Listbox
+        const listboxCard = page.locator('.card', { hasText: 'Listbox' })
+        await listboxCard.getByRole('searchbox').fill('R')
+        const romeOption = listboxCard.getByRole('option', { name: 'Rome' })
+        await romeOption.click()
+        await expect(romeOption).toHaveAttribute('aria-selected', 'true')
+
+        // Select
+        const selectCard = page.locator('.card', { hasText: 'Select' })
+        const selectBox = selectCard.locator('.p-select').getByRole('combobox')
+        await selectBox.click()
+        const istanbulOption= page.locator('.p-select-list-container').getByRole('option', { name: 'Istanbul' })
+        await istanbulOption.click()
+        await expect(selectBox).toHaveAttribute('aria-label', 'Istanbul')
 
    })
 })

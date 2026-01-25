@@ -12,7 +12,7 @@ export default defineConfig({
     trace: 'on-first-retry',
     video: 'on',
     launchOptions: {
-    slowMo: 100,
+    slowMo: 500,
   }, 
 },
 
