@@ -1,25 +1,25 @@
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig, devices } from "@playwright/test"
 
 export default defineConfig({
-  testDir: './tests',
+  testDir: "./tests",
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: 'html',
+  reporter: "html",
   use: {
-    baseURL: 'https://sakai.primeng.org',
-    trace: 'on-first-retry',
-    video: 'on',
+    baseURL: "https://sakai.primeng.org",
+    trace: "on-first-retry",
+    video: "on",
     launchOptions: {
-    slowMo: 500,
-  }, 
-},
+      slowMo: 500,
+    },
+  },
 
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: "chromium",
+      use: { ...devices["Desktop Chrome"] },
     },
 
     // {
@@ -52,5 +52,4 @@ export default defineConfig({
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
   ],
-
-});
+})
