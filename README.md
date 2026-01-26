@@ -9,7 +9,8 @@ reliable assertions, and readable test structure.
   and Advanced form cards.
 - Input Fields page interactions: input text states, icons, float label, textarea,
   autocomplete, date picker, input number, slider, rating, knob, color picker,
-  input group, multi-select, and tree select.
+  input group, radio button, checkbox, toggle switch, listbox, select,
+  multi-select, and tree select.
 - Field behaviors: fill, clear, sequential typing, value assertions, combobox
   selection, and numeric step controls.
 - UI theme support: dark mode toggle helper.
