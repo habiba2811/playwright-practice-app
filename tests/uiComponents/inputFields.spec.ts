@@ -177,6 +177,7 @@ test.describe("Ui Components - Input Fields", () => {
     await expect(multiSelectDropDown).toHaveText('GermanyFrance')
 
     // // TreeSelect
+    await page.keyboard.press('Escape')
     const treeSelect = page.locator(".p-treeselect")
     await treeSelect.click()
     const panel = page.locator(".p-treeselect-overlay")
