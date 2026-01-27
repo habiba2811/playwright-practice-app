@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test:forms": " npx playwright test formLayout.spec.ts --headed",
-    "test:input": " npx playwright test inputFields.spec.ts --headed"
+    "test:input": " npx playwright test inputFields.spec.ts --headed",
+    "test:table": " npx playwright test tables.spec.ts --headed"
+
   },
   "keywords": [],
   "author": "",

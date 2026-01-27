@@ -9,6 +9,7 @@ test.beforeEach(async ({ page }) => {
 test.describe("Ui Components - Form Layout", () => {
   test.beforeEach(async ({ page }) => {
     await page.getByText("Form Layout").click()
+    expect(page).toHaveURL('/uikit/formlayout')
   })
 
   test("input fields Vertical", async ({ page }) => {

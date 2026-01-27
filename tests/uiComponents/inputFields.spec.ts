@@ -9,6 +9,8 @@ test.beforeEach(async ({ page }) => {
 test.describe("Ui Components - Input Fields", () => {
   test.beforeEach(async ({ page }) => {
     await page.getByText("Input").click()
+    expect(page).toHaveURL('/uikit/input')
+
   })
 
   test("Input Fields", async ({ page }) => {
