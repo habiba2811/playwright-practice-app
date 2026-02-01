@@ -5,7 +5,8 @@
   "scripts": {
     "test:forms": " npx playwright test formLayout.spec.ts --headed",
     "test:input": " npx playwright test inputFields.spec.ts --headed",
-    "test:table": " npx playwright test tables.spec.ts --headed"
+    "test:table": " npx playwright test tables.spec.ts --headed",
+    "test:navigate": " npx playwright test pageObject.spec.ts --headed"
 
   },
   "keywords": [],
