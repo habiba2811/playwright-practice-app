@@ -1,5 +1,9 @@
 # Playwright Practice
 
+![Playwright](https://img.shields.io/badge/Playwright-Testing-brightgreen)
+![TypeScript](https://img.shields.io/badge/TypeScript-Language-blue)
+![Node.js](https://img.shields.io/badge/Node.js-Runtime-green)
+
 This project is focused on practicing Playwright UI automation against a real
 component library (PrimeNG), with emphasis on realistic user interactions,
 reliable assertions, and readable test structure.
