@@ -8,6 +8,9 @@ This project is focused on practicing Playwright UI automation against a real
 component library (PrimeNG), with emphasis on realistic user interactions,
 reliable assertions, and readable test structure.
 
+## Demo GIF
+![UI Components Demo](demo.gif)
+
 ## What is covered
 - Form Layout page interactions: Vertical, Horizontal, Vertical Grid, Help Text,
   and Advanced form cards.
@@ -36,8 +39,6 @@ npm run test:input
 npx playwright test
 ```
 
-## Demo GIF
-![UI Components Demo](demo.gif)
 
 ## Configuration notes
 - Base URL: `https://sakai.primeng.org`
