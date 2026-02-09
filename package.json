@@ -7,7 +7,6 @@
     "test:input": " npx playwright test inputFields.spec.ts --headed",
     "test:table": " npx playwright test tables.spec.ts --headed",
     "test:navigate": " npx playwright test pageObject.spec.ts --headed"
-
   },
   "keywords": [],
   "author": "",
@@ -17,5 +16,8 @@
     "@playwright/test": "^1.57.0",
     "@types/node": "^25.0.9",
     "prettier": "^3.8.1"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^10.3.0"
   }
 }

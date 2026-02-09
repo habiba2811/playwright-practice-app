@@ -1,5 +1,6 @@
 import { test, expect } from "@playwright/test"
 import { darkMode } from "../../handlers/darkModeHanlder"
+import { faker } from '@faker-js/faker';
 
 test.beforeEach(async ({ page }) => {
   await page.goto("/")
@@ -15,9 +16,10 @@ test.describe("Ui Components - Input Fields", () => {
 
   test("Input Fields", async ({ page }) => {
     // InputText
+    const randomName= faker.person.firstName()
     const defaultInput= page.getByRole('textbox', { name: 'Default' });
-    await defaultInput.fill('John');
-    await expect(defaultInput).toHaveValue('John');
+    await defaultInput.fill(`${randomName}`);
+    await expect(defaultInput).toHaveValue(`${randomName}`);
     const disabledInput= page.getByRole('textbox', { name: 'Disabled' });
     await expect(disabledInput).toBeDisabled();
     const invalidInput= page.getByRole('textbox', { name: 'Invalid' });
