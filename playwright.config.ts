@@ -6,9 +6,19 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 1,
   workers: process.env.CI ? 1 : undefined,
-  reporter: "html",
+  reporter: [
+    ['html'],
+    process.env.CI ? ["dot"] : ["list"],
+     [
+      "@argos-ci/playwright/reporter",
+      {
+        uploadToArgos: !!process.env.CI,
+      }
+    ],
+  ],
   use: {
     baseURL: "https://sakai.primeng.org",
+    screenshot: "only-on-failure",
     trace: "on-first-retry",
     video: "on",
     launchOptions: {

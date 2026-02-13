@@ -1,7 +1,11 @@
 import { test, expect } from "@playwright/test"
 import { faker } from "@faker-js/faker"
+import { argosScreenshot } from "@argos-ci/playwright";
+
+
 
   test("Mobile - input fields Advanced", async ({ page }, testInfo) => {
+    await argosScreenshot(page, "mobile");
     await page.goto("/")
     if (testInfo.project.name == 'Mobile')
     await page.locator('.layout-menu-button.layout-topbar-action').click();
