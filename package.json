@@ -7,7 +7,7 @@
     "test:input": " npx playwright test inputFields.spec.ts --headed",
     "test:table": " npx playwright test tables.spec.ts --headed",
     "test:navigate": " npx playwright test pageObject.spec.ts --headed",
-    "test:mobile": "npx playwright test tests/testMobile.spec.ts --headed"
+    "test:mobile": "npx playwright test tests/testMobile.spec.ts"
   },
   "keywords": [],
   "author": "",

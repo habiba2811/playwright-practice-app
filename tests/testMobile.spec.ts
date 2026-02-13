@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test"
 import { faker } from "@faker-js/faker"
 
-  test("input fields Advanced", async ({ page }, testInfo) => {
+  test("Mobile - input fields Advanced", async ({ page }, testInfo) => {
     await page.goto("/")
     if (testInfo.project.name == 'Mobile')
     await page.locator('.layout-menu-button.layout-topbar-action').click();
