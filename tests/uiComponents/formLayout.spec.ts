@@ -7,12 +7,12 @@ test.beforeEach(async ({ page }) => {
 })
 
 test.describe("Ui Components - Form Layout", () => {
-  test.describe.configure({retries:2})
+  test.describe.configure({retries:0})
   test.beforeEach(async ({ page }) => {
     await page.getByText("Form Layout").click()
   })
 
-  test.only("input fields Vertical", async ({ page }) => {
+  test("input fields Vertical", async ({ page }) => {
     const verticalCard = page.locator(".card", {
       has: page.getByText("Vertical", { exact: true }),
     })
@@ -50,13 +50,14 @@ test.describe("Ui Components - Form Layout", () => {
     await helpText.getByLabel("Username").fill("test")
   })
 
-  test("input fields Advanced", async ({ page }) => {
+  test.only("input fields Advanced", async ({ page }) => {
     const Advanced = page.locator(".card", { has: page.getByText("Advanced") })
     await Advanced.getByLabel("Firstname").fill("test")
     await Advanced.getByLabel("Lastname").fill("test")
     await Advanced.getByLabel("Address").fill("test")
     await Advanced.getByRole("combobox", { name: "Select One" }).click()
     await page.getByRole("option", { name: "Option 1" }).click()
+    await expect(Advanced).toHaveScreenshot()
     await Advanced.getByLabel("Zip").fill("test")
   })
 })
